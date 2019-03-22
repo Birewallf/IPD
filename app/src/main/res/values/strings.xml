@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">IPD</string>
+    <string name="local_ip">local ip</string>
+    <string name="public_ip">public ip</string>
+    <string name="n_d">n/d</string>
+    <string name="mac_address">mac address</string>
+
+    <string name="nav_header_title">IPD</string>
+    <string name="nav_header_subtitle"></string>
+    <string name="nav_header_desc">Navigation header</string>
+</resources>
