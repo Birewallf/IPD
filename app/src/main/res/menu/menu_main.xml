@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="local.bwg.test.MainActivity">
     <item
-        android:id="@+id/action_favorite"
+        android:id="@+id/action_update"
         android:icon="@android:drawable/stat_notify_sync"
         android:title=""
         app:showAsAction="ifRoom" />

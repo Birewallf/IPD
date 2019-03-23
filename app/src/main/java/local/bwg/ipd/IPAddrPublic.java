@@ -17,8 +17,8 @@ public class IPAddrPublic  implements IPAddrInterface {
     // HTTP POST request
     private String sendPost() {
         try {
-            //String url = "https://myipinfo.net";
-            String url = "https://mybrowserinfo.com/detail.asp";
+            String url = "https://myipinfo.net";
+            //String url = "https://mybrowserinfo.com/detail.asp";
             URL obj = new URL(url);
             HttpsURLConnection con = (HttpsURLConnection) obj.openConnection();
 
