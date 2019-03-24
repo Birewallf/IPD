@@ -11,17 +11,20 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.view.menu.ActionMenuItemView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+/**
+ * Main activity
+ * @author ssvs
+ */
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener{
 
     TextView publicipout;
-
+    MenuItem menuItem_update;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +61,13 @@ public class MainActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
+
+
+        // Get the SearchView and set the searchable configuration
+        MenuItem menuItem = menu.findItem(R.id.action_update);
+
+        this.menuItem_update = (MenuItem) menuItem;
+
         return true;
     }
 
@@ -75,7 +85,7 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    /////////////// LEFT BAR
+    /** //////////////LEFT BAR///////////////*/
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -106,8 +116,10 @@ public class MainActivity extends AppCompatActivity
 
 
         if (id == R.id.nav_info) {
+            menuItem_update.setVisible(true);
             allIPUpdate();
         } else if (id == R.id.nav_tools) {
+            menuItem_update.setVisible(false);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -125,7 +137,7 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    ////////////////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////
 
     /**
      * all ips update
@@ -134,6 +146,7 @@ public class MainActivity extends AppCompatActivity
         AllIPUpdateTask allIPUpdateTask = new AllIPUpdateTask();
         allIPUpdateTask.execute();
     }
+
     /**
      * AllIPUpdateTask task
      */
@@ -165,6 +178,7 @@ public class MainActivity extends AppCompatActivity
             publicIPUpdate();
         }
     }
+
     /**
      * local ip update
      * @return ip

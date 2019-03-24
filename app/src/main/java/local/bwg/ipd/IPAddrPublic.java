@@ -8,6 +8,9 @@ import java.net.URL;
 
 import javax.net.ssl.HttpsURLConnection;
 
+/**
+ * Check global ip address
+ */
 public class IPAddrPublic  implements IPAddrInterface {
     @Override
     public String getIpAddr() {
@@ -21,6 +24,8 @@ public class IPAddrPublic  implements IPAddrInterface {
             //String url = "https://mybrowserinfo.com/detail.asp";
             URL obj = new URL(url);
             HttpsURLConnection con = (HttpsURLConnection) obj.openConnection();
+
+            con.setConnectTimeout(5000);
 
             //add reuqest header
             con.setRequestMethod("POST");

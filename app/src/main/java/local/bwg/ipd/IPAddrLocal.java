@@ -1,15 +1,15 @@
 package local.bwg.ipd;
 
-import android.text.format.Formatter;
-import android.util.Log;
 
 import java.net.InetAddress;
 import java.net.NetworkInterface;
-import java.net.SocketException;
 import java.util.Collections;
-import java.util.Enumeration;
 import java.util.List;
 
+/**
+ * Check local ip address
+ * @author ssvs
+ */
 class IPAddrLocal implements IPAddrInterface {
 
     @Override
